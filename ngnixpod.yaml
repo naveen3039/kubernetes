@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  app: nginx
+spec:
+  containers:
+    - name: hello
+      image: nginx:1.15.11
+      imagePullPolicy: IfNotPresent
+  restartPolicy: OnFailure
