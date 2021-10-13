@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: aplinepod
+  namespace: default
+spec:
+  volumes:
+  - name: test-volume
+
+ #   gcePersistentDisk:
+#      pdName: my disk
+  #    fsType: ext4
+  containers:
+  - name: filealpine
+    image: alpine
+    command: ["/bin/sh"]
+    args: ["-C","while true; do date >> /var/simple/file.txt; sleep 5; done"]
+    volumeMounts:
+    - mountPath: /var/simple
+      name: test-volume
+ 

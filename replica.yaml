@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: rs-ngnix
+  name: rs-nginx
   labels:
     app: nginx
     tier: frontend
@@ -19,7 +19,4 @@ spec:
     spec:
       containers:
         - name: web
-          image: nginx
-      ports:
-        - 
-          containerPort: 80
+          image: nginx:1.14.2
